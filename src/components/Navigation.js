@@ -1,9 +1,10 @@
 import React from 'react';
 
-const Navigation = () => (
+const Navigation = ({ items }) => (
   <ul>
-    <li><a href='/'>Home</a></li>
-    <li><a href='/contact'>Contact Me</a></li>
+    {items.map(item => 
+      <li key={item.url}><a href={item.url}>{item.name}</a></li>
+    )}
   </ul>
 );
 
